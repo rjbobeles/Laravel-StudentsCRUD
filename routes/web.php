@@ -15,16 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/students/', 'StudentController@index');
-Route::get('/students/{id}', 'StudentController@show');
+Route::resource('students', 'StudentController');
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
 
 Auth::routes(['verify' => 'true']);
-
-Route::middleware('auth') -> group(function() {
-    Route::get('/students/create', 'StudentController@create');
-    Route::post('/students/store', 'StudentController@store');
-    Route::get('/students/{id}/edit', 'StudentController@edit');
-    Route::put('/students/{id}/update', 'StudentController@update');
-    Route::delete('/students/', 'StudentController@delete');
-});
 Route::get('/home', 'HomeController@index')->name('home');
