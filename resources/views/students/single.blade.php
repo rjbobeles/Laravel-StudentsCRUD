@@ -19,7 +19,7 @@
                 <b>Student Name:</b> {{ $student->last_name }}, {{ $student->first_name }} {{ $student->middle_name }} <br>
                 <b>Email:</b> {{ $student->email }} <br> 
                 <b>Course:</b> {{ $student->course }} <br>
-                <b>Added By:</b> {{ $student->user->username }} <br>
+                <b>Added By:</b> {{ $student->addedBy->username }} <br>
                 <b>Created:</b> {{ $student->created_at }} <br>
                 <b>Last Updated:</b> {{ $student->updated_at }} 
             </div>
