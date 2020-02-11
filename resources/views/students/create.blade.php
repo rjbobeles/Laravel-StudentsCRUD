@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <form  method="POST" action="{{ url('students/store')}}">
+            <form  method="POST" action="{{ url('students')}}">
                 @csrf
                 <div class="form-group row">
                     <label for="id_number" class="col-md-4 col-form-label text-md-right">{{ __('ID Number') }}</label>
